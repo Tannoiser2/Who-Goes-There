@@ -104,15 +104,13 @@ def glb_textured(obj, png, dst, scale=1.0, maxside=2048):
     uv = m.visual.uv
     m.visual = trimesh.visual.TextureVisuals(uv=uv, image=tex)
     m.export(dst)
-def glb_colore(obj, rgb, dst, scale=1.0, facce=9000):
+def glb_colore(obj, rgb, dst, scale=1.0):
+    # tutto il dettaglio della scultura, con le normali; Unity è sinistrorso: si specchia X e si girano le facce
     m = trimesh.load(obj, force='mesh', process=True)
-    if len(m.faces) > facce:
-        import fast_simplification
-        v, f = fast_simplification.simplify(m.vertices, m.faces, 1 - facce / len(m.faces))
-        m = trimesh.Trimesh(v, f)
+    m.vertices[:, 0] *= -1
+    m.invert()
     m.apply_scale(scale)
-    m.visual = trimesh.visual.ColorVisuals(m, face_colors=np.tile(np.array(list(rgb) + [255], dtype=np.uint8), (len(m.faces), 1)))
-    m.export(dst)
+    open(dst, 'wb').write(trimesh.exchange.gltf.export_glb(trimesh.Scene(m), include_normals=True))
 
 glb_textured(EX + "/Inside_Board_ea4bd6/default.obj', EX + '/Inside_Board_ea4bd6/Camp Board UVs_Inside.png', A + '/3d/tabellone_dentro.glb', 0.01)
 glb_textured(EX + '/Outside_Board_5e16fc/default.obj', EX + '/Outside_Board_5e16fc/Camp Board UVs_Outside.png', A + '/3d/tabellone_fuori.glb', 0.01)
@@ -137,7 +135,7 @@ for pg, d in MINI.items():
     glb_colore(EX + '/' + d + '/mini.obj', rgb, f'{A}/3d/mini_{pg}.glb', 0.01)
     print('mini', pg, rgb)
 mesh_grande('Phase_Marker_6884d8')
-glb_colore(EX + '/Phase_Marker_6884d8/mini.obj', (173, 174, 173), A + '/3d/segnalino_fase.glb', 0.01, 4000)
+glb_colore(EX + '/Phase_Marker_6884d8/mini.obj', (173, 174, 173), A + '/3d/segnalino_fase.glb', 0.01)
 # sfondo dell'ambiente: pavimento per fase
 for i in (1, 2, 3):
     webp(Image.open(EX + f'/Environment_4c7d19/Floor2_Phase{i}.png'), f'{A}/3d/pavimento_{i}.webp', 1024)

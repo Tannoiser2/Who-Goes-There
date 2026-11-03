@@ -13,6 +13,7 @@ func _go(p, mo):
 	var args := OS.get_cmdline_user_args()
 	if args.size() >= 3:
 		p.pitch = float(args[0]); p.yaw = float(args[1]); p.dist = float(args[2]); p._aggiorna_camera()
+		if args.size() >= 5: p.perno.position = Vector3(float(args[3]), 0, float(args[4]))
 	for i in 30: await process_frame
 	root.get_viewport().get_texture().get_image().save_png("/tmp/foto3d.png")
 	quit()

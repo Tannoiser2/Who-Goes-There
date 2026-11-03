@@ -316,7 +316,9 @@ func aggiorna(m: Motore) -> void:
 			n.add_child(fig)
 			var mt := StandardMaterial3D.new()
 			mt.albedo_color = Dati.PG[pg]["colore"]
-			mt.roughness = 0.55
+			mt.roughness = 0.45
+			mt.metallic_specular = 0.4
+			mt.cull_mode = BaseMaterial3D.CULL_DISABLED
 			_materiale(n, mt)
 			add_child(n)
 			mini[pg] = n
