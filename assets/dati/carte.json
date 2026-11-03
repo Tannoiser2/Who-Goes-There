@@ -1,0 +1,2006 @@
+{
+"tipi": {
+"legno": {
+"nome": "LEGNO",
+"testo": "Materiale da costruzione.",
+"colore": "mat"
+},
+"stoffa": {
+"nome": "STOFFA",
+"testo": "Materiale da costruzione.",
+"colore": "mat"
+},
+"corda": {
+"nome": "CORDA",
+"testo": "Materiale da costruzione.",
+"colore": "mat"
+},
+"viti": {
+"nome": "VITI",
+"testo": "Materiale da costruzione.",
+"colore": "mat"
+},
+"metallo": {
+"nome": "METALLO",
+"testo": "Materiale da costruzione.",
+"colore": "mat"
+},
+"alcol": {
+"nome": "ALCOL",
+"testo": "Giocala quando sei fuori per guadagnare 1 Stamina.",
+"colore": "viola"
+},
+"fiammiferi": {
+"nome": "FIAMMIFERI",
+"testo": "Possono accendere il Falò.",
+"colore": "arancio"
+},
+"risorsa": {
+"nome": "RISORSA",
+"testo": "Sostituisce un qualsiasi materiale. Non si gioca insieme a un'altra Risorsa.",
+"colore": "grigio"
+},
+"spazzatura": {
+"nome": "SPAZZATURA",
+"testo": "Non serve a niente... o quasi.",
+"colore": "grigio"
+},
+"dex": {
+"nome": "DEX",
+"testo": "Guadagni 1 Azione in più in questo turno.",
+"colore": "grigio"
+},
+"scatoletta": {
+"nome": "SCATOLETTA",
+"testo": "+1 Stamina. È cibo per i turni del Pasto.",
+"colore": "grigio"
+},
+"scatoletta2": {
+"nome": "SCATOLETTA",
+"testo": "+2 Stamina. È cibo per i turni del Pasto.",
+"colore": "grigio"
+},
+"snack": {
+"nome": "SNACK",
+"testo": "+1 Stamina.",
+"colore": "grigio"
+},
+"pronto_soccorso": {
+"nome": "PRONTO SOCCORSO",
+"testo": "Togli 1 Ferita dal tuo personaggio.",
+"colore": "grigio"
+},
+"colpo_in_canna": {
+"nome": "COLPO IN CANNA",
+"testo": "+2 dadi Azione a un tiro contro un Attacco.",
+"colore": "grigio"
+},
+"fucile": {
+"nome": "FUCILE",
+"testo": "+3 dadi Azione a un tiro contro un Attacco.",
+"colore": "grigio"
+},
+"razzo": {
+"nome": "RAZZO",
+"testo": "Trasforma 1 dado Azione mancato in un Successo.",
+"colore": "grigio"
+},
+"accendino_vuoto": {
+"nome": "ACCENDINO VUOTO",
+"testo": "Giocalo con 1 Alcol per ottenere la tessera Accendino.",
+"colore": "grigio"
+},
+"carta_piede_porco": {
+"nome": "PIEDE DI PORCO",
+"testo": "Ottieni la tessera Piede di porco.",
+"colore": "grigio"
+},
+"carta_lanciarazzi": {
+"nome": "LANCIARAZZI",
+"testo": "Ottieni la tessera Lanciarazzi.",
+"colore": "grigio"
+},
+"carta_torcia": {
+"nome": "TORCIA",
+"testo": "Ottieni la tessera Torcia.",
+"colore": "grigio"
+},
+"adrenalina": {
+"nome": "ADRENALINA",
+"testo": "Se dormi da solo, giocala per non pescare la carta Vulnerabile.",
+"colore": "grigio"
+},
+"esame_sangue": {
+"nome": "ESAME DEL SANGUE",
+"testo": "Tu e un giocatore nel tuo luogo vi mostrate in segreto il vostro stato di infezione. Devi avere almeno 1 carta Vulnerabile.",
+"colore": "grigio"
+},
+"guaritore": {
+"nome": "GUARIGIONE RAPIDA",
+"testo": "Togli 1 Ferita a tutti i giocatori nel tuo stesso spazio.",
+"colore": "grigio"
+},
+"bisturi": {
+"nome": "BISTURI",
+"testo": "Ottieni la tessera Coltello.",
+"colore": "grigio"
+},
+"boost_stamina": {
+"nome": "RICARICA",
+"testo": "Tira 1 dado: Successo = +3 Stamina, Mancato = +2 Stamina.",
+"colore": "grigio"
+},
+"proiettile": {
+"nome": "PROIETTILE",
+"testo": "+2 dadi Azione a un tiro contro un Attacco. Serve la Pistola.",
+"colore": "grigio"
+},
+"prendere_comando": {
+"nome": "PRENDERE IL COMANDO",
+"testo": "Con 1 Proiettile aggiungi 1 Successo al tiro di un altro giocatore contro un Attacco, ovunque sia. Serve la Pistola.",
+"colore": "grigio"
+},
+"dispensa": {
+"nome": "DISPENSA",
+"testo": "Punto di riferimento (dentro). Spendi 1 XP qui per pescare da un mazzo interno. Scarta dopo 3 usi.",
+"colore": "grigio"
+},
+"lanciarazzi_kinner": {
+"nome": "LANCIARAZZI",
+"testo": "Ottieni la tessera Lanciarazzi di Kinner.",
+"colore": "grigio"
+},
+"offro_io": {
+"nome": "OFFRO IO",
+"testo": "Punto di riferimento nel tuo luogo. Giocaci sopra un Alcol: tutti lì guadagnano 1 Stamina. Scarta dopo 3 usi.",
+"colore": "grigio"
+},
+"molotov": {
+"nome": "MOLOTOV",
+"testo": "Aggiunge 1 Successo a un tiro contro un Attacco.",
+"colore": "grigio"
+},
+"kit_riparazione": {
+"nome": "KIT RIPARAZIONE",
+"testo": "Togli 1 Danno alla Porta (fuori) o alla Caldaia (dentro).",
+"colore": "grigio"
+},
+"banco_lavoro": {
+"nome": "BANCO DA LAVORO",
+"testo": "Punto di riferimento: ora si può costruire anche fuori.",
+"colore": "grigio"
+},
+"cassetta_attrezzi": {
+"nome": "CASSETTA ATTREZZI",
+"testo": "Punto di riferimento (dentro). Spendi 1 XP al posto di un materiale, una volta per costruzione. Scarta dopo 3 usi.",
+"colore": "grigio"
+},
+"resistenza": {
+"nome": "RESISTENZA",
+"testo": "Tutti i giocatori ottengono gratis lo sblocco Cardio.",
+"colore": "grigio"
+},
+"test_ospite": {
+"nome": "TEST DELL'OSPITE",
+"testo": "Tu e un giocatore nel tuo luogo vi mostrate in segreto tutte le carte Vulnerabili. Dovete averne almeno 1 a testa.",
+"colore": "grigio"
+},
+"ingegno": {
+"nome": "INGEGNO",
+"testo": "Tutti possono ritirare il dado Armadietto (se sbloccato e non ancora usato).",
+"colore": "grigio"
+},
+"legnetti": {
+"nome": "LEGNETTI",
+"testo": "Mettila nel Falò: quando si accende, +1 Stamina in più a testa.",
+"colore": "grigio"
+},
+"stazione_medica": {
+"nome": "STAZIONE MEDICA",
+"testo": "Punto di riferimento (dentro). Spendi 5 XP qui per togliere 1 Ferita. Scarta dopo 1 uso.",
+"colore": "grigio"
+},
+"sella": {
+"nome": "SELLA PER CANI",
+"testo": "Punto di riferimento (dentro). Finché Jack è con Clark, gli scambi si fanno ovunque.",
+"colore": "grigio"
+},
+"biscotto": {
+"nome": "BISCOTTO",
+"testo": "Sfama il tuo cane durante un Pasto.",
+"colore": "grigio"
+},
+"riporto": {
+"nome": "RIPORTO!",
+"testo": "Tutti possono girare il dado Armadietto sul simbolo che vogliono (se non ancora usato).",
+"colore": "grigio"
+},
+"salvatore_att": {
+"nome": "SALVATORE",
+"testo": "Aggiunge 1 Successo a un tiro contro un Attacco dell'evento.",
+"colore": "grigio"
+},
+"salvatore_ost": {
+"nome": "SALVATORE",
+"testo": "Aggiunge 1 Successo a un tiro contro un Ostacolo dell'evento.",
+"colore": "grigio"
+},
+"salvatore_any": {
+"nome": "SALVATORE",
+"testo": "Aggiunge 1 Successo a un tiro contro un evento del campo.",
+"colore": "grigio"
+},
+"coltellino": {
+"nome": "COLTELLINO",
+"testo": "Ottieni la tessera Coltellino svizzero.",
+"colore": "grigio"
+},
+"sesto_senso": {
+"nome": "SESTO SENSO",
+"testo": "Quando si scopre un evento del campo, giocala per passare al successivo.",
+"colore": "grigio"
+},
+"manuale_addestramento": {
+"nome": "MANUALE",
+"testo": "Jack diventa Compagno addestrato. Serve lo sblocco Compagno.",
+"colore": "grigio"
+},
+"vuln_pulita": {
+"nome": "VULNERABILE",
+"testo": "Pulita.",
+"colore": "grigio"
+},
+"vuln_contaminata": {
+"nome": "CONTAMINATA",
+"testo": "Sei infetto: sei l'Ospite.",
+"colore": "grigio"
+},
+"danno_porta": {
+"nome": "DANNO ALLA PORTA",
+"testo": "Metti 1 Danno sulla Porta del campo.",
+"colore": "rosso"
+},
+"cosa_attacca": {
+"nome": "LA COSA",
+"testo": "Fallimento: ricevi 1 Ferita e peschi 1 carta Vulnerabile.",
+"colore": "rosso"
+},
+"mappe": {
+"nome": "MAPPE GEOGRAFICHE",
+"testo": "+1 Bonus Elicottero. Tienila accanto alla tua plancia.",
+"colore": "blu"
+},
+"taniche": {
+"nome": "TANICHE",
+"testo": "+2 Bonus Elicottero. Tienila accanto alla tua plancia.",
+"colore": "blu"
+},
+"dati_ricerca": {
+"nome": "DATI DI RICERCA",
+"testo": "+3 Bonus Elicottero. Tienila accanto alla tua plancia.",
+"colore": "blu"
+},
+"manuale_elicottero": {
+"nome": "MANUALE DI VOLO",
+"testo": "Tienila accanto alla plancia: 1 ritiro sul tiro Bonus a fine partita.",
+"colore": "blu"
+},
+"forziere_torcia": {
+"nome": "CASSETTA",
+"testo": "2 XP, OPPURE tira 1 dado: Successo = tessera Torcia.",
+"colore": "verde"
+},
+"forziere_sciarpa": {
+"nome": "CASSETTA",
+"testo": "2 XP, OPPURE tira 1 dado: Successo = tessera Sciarpa.",
+"colore": "verde"
+},
+"forziere_borsa": {
+"nome": "CASSETTA",
+"testo": "2 XP, OPPURE tira 1 dado: Successo = tessera Borsa.",
+"colore": "verde"
+},
+"forziere_stamina": {
+"nome": "CASSETTA",
+"testo": "3 XP, OPPURE tira 1 dado: Successo = +4 Stamina.",
+"colore": "verde"
+},
+"forziere_lanciafiamme": {
+"nome": "CASSETTA",
+"testo": "2 XP, OPPURE tira 1 dado: Successo = tessera Lanciafiamme.",
+"colore": "verde"
+},
+"forziere_xp": {
+"nome": "CASSETTA",
+"testo": "2 XP, OPPURE tira 1 dado: Successo = 4 XP.",
+"colore": "verde"
+},
+"forziere_specialita": {
+"nome": "CASSETTA",
+"testo": "2 XP, OPPURE tira 1 dado: Successo = scegli 1 carta dal tuo mazzo Specialità.",
+"colore": "verde"
+},
+"coltello_fase": {
+"nome": "COLTELLO",
+"testo": "Tessera Coltello, OPPURE 2 XP.",
+"colore": "verde"
+},
+"accendino_fase": {
+"nome": "ACCENDINO",
+"testo": "Tessera Accendino, OPPURE 1 XP.",
+"colore": "verde"
+},
+"guida_fase": {
+"nome": "CORDA GUIDA",
+"testo": "Tessera Corda guida, OPPURE 2 XP.",
+"colore": "verde"
+},
+"cappotto_fase": {
+"nome": "CAPPOTTO",
+"testo": "Una tessera Cappotto a scelta, OPPURE 2 XP.",
+"colore": "verde"
+},
+"lanterna_fase": {
+"nome": "LANTERNA",
+"testo": "Tessera Lanterna, OPPURE 2 XP.",
+"colore": "verde"
+},
+"scelta_interne": {
+"nome": "SCELTE",
+"testo": "3 XP, OPPURE pesca 1 carta da ciascuno dei 3 mazzi interni.",
+"colore": "verde"
+},
+"scelta_specialita": {
+"nome": "SCELTE",
+"testo": "3 XP, OPPURE pesca 2 carte dal tuo mazzo Specialità.",
+"colore": "verde"
+},
+"coltelli_lancio": {
+"nome": "COLTELLI DA LANCIO",
+"testo": "Tienila accanto alla plancia. Scartala per +1 dado a un tiro contro un Attacco.",
+"colore": "verde"
+},
+"giubbotto": {
+"nome": "GIUBBOTTO ANTIPROIETTILE",
+"testo": "Tienila accanto alla plancia. Scartala per evitare 1 Ferita.",
+"colore": "verde"
+},
+"termite": {
+"nome": "TERMITE",
+"testo": "Tienila accanto alla plancia. Scartala per +2 Successi a un tiro contro un Attacco.",
+"colore": "verde"
+},
+"ev_incendio_caldaia": {
+"nome": "PERICOLO INCENDIO",
+"testo": "Fallimento: 2 Danni sulla Caldaia.",
+"colore": "blu"
+},
+"ev_incendio": {
+"nome": "PERICOLO INCENDIO",
+"testo": "Fallimento: ricevi 1 Ferita.",
+"colore": "blu"
+},
+"ev_pazzo": {
+"nome": "IL PAZZO",
+"testo": "Fallimento: ricevi 1 Ferita e metti 1 Danno sulla Caldaia.",
+"colore": "rosso"
+},
+"ev_filo_spinato": {
+"nome": "FILO SPINATO",
+"testo": "Fallimento: ricevi 1 Ferita critica.",
+"colore": "blu"
+},
+"ev_scienziato": {
+"nome": "LO SCIENZIATO",
+"testo": "Ognuno può spendere 1 XP per avere 1 Azione in più in questo turno.",
+"colore": "verde"
+},
+"ev_fame": {
+"nome": "MORSI DELLA FAME",
+"testo": "Fallimento: giochi 1 Scatoletta o peschi 1 carta Vulnerabile.",
+"colore": "blu"
+},
+"ev_danno_caldaia": {
+"nome": "GUASTO ALLA CALDAIA",
+"testo": "Metti 2 Danni sulla Caldaia.",
+"colore": "verde"
+},
+"ev_cane": {
+"nome": "ATTACCO DEL CANE",
+"testo": "Fallimento: ricevi 1 Ferita.",
+"colore": "rosso"
+},
+"ev_congelamento": {
+"nome": "CONGELAMENTO",
+"testo": "Tutti perdono 1 Azione in questo turno.",
+"colore": "verde"
+},
+"ev_cane_rabbioso": {
+"nome": "CANE RABBIOSO",
+"testo": "Fallimento: ricevi 1 Ferita critica.",
+"colore": "rosso"
+},
+"ev_paranoia_dadi": {
+"nome": "PARANOIA",
+"testo": "Ognuno tira 4 dadi: servono in tutto 2 Successi per giocatore. Fallimento: 1 Ferita a testa.",
+"colore": "verde"
+},
+"ev_valanga": {
+"nome": "VALANGA",
+"testo": "Fallimento: ricevi 1 Ferita o perdi 2 XP.",
+"colore": "blu"
+},
+"ev_paranoia_carte": {
+"nome": "PARANOIA",
+"testo": "Ognuno tira 1 dado: Successo = pesca 1 carta interna, Mancato = scarta 1 carta.",
+"colore": "verde"
+},
+"ev_cosa": {
+"nome": "LA COSA",
+"testo": "Fallimento: ricevi 1 Ferita e 1 carta Vulnerabile.",
+"colore": "rosso"
+},
+"ev_ombre": {
+"nome": "OMBRE MORTALI",
+"testo": "Il capo pesca 1 carta interna, poi ognuno passa 1 carta al giocatore successivo.",
+"colore": "verde"
+},
+"ev_blackout": {
+"nome": "BLACKOUT",
+"testo": "Fallimento: ricevi 1 Ferita o perdi 2 XP.",
+"colore": "blu"
+}
+},
+"mazzi": {
+"specialita_copper": [
+{
+"tipo": "adrenalina",
+"img": "specialita_copper_716ca0ad"
+},
+{
+"tipo": "esame_sangue",
+"img": "specialita_copper_6cfc8bb3"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_copper_afdbd954"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_copper_921f0c5b"
+},
+{
+"tipo": "dex",
+"img": "specialita_copper_3ec661cc"
+},
+{
+"tipo": "dex",
+"img": "specialita_copper_3ec661cc"
+},
+{
+"tipo": "guaritore",
+"img": "specialita_copper_1adf5449"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_copper_b671a9a2"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_copper_7a99d86e"
+},
+{
+"tipo": "bisturi",
+"img": "specialita_copper_3f5cfb46"
+},
+{
+"tipo": "snack",
+"img": "specialita_copper_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_copper_05fa27d0"
+},
+{
+"tipo": "boost_stamina",
+"img": "specialita_copper_a2d97ad2"
+}
+],
+"specialita_kinner": [
+{
+"tipo": "alcol",
+"img": "specialita_kinner_dfbe0823"
+},
+{
+"tipo": "alcol",
+"img": "specialita_kinner_dfbe0823"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_cb45d128"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_7c46903d"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_0d1f1cf7"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_bd9d8f28"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_5e71fb28"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_47c4237a"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_038d6299"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_kinner_c395aab9"
+},
+{
+"tipo": "dex",
+"img": "specialita_kinner_19e40166"
+},
+{
+"tipo": "dex",
+"img": "specialita_kinner_19e40166"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_kinner_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_kinner_b671a9a2"
+},
+{
+"tipo": "lanciarazzi_kinner",
+"img": "specialita_kinner_d563ba10"
+},
+{
+"tipo": "dispensa",
+"img": "specialita_kinner_5df485c1"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_kinner_46ccef6e"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_kinner_46ccef6e"
+},
+{
+"tipo": "snack",
+"img": "specialita_kinner_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_kinner_05fa27d0"
+}
+],
+"specialita_mcready": [
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "specialita_mcready_4f0e3d69"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_mcready_863a5de8"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_mcready_30240994"
+},
+{
+"tipo": "dex",
+"img": "specialita_mcready_19e40166"
+},
+{
+"tipo": "dex",
+"img": "specialita_mcready_19e40166"
+},
+{
+"tipo": "offro_io",
+"img": "specialita_mcready_312a8510"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_mcready_62ae5597"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_mcready_62ae5597"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_mcready_7a99d86e"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_mcready_7a99d86e"
+},
+{
+"tipo": "snack",
+"img": "specialita_mcready_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_mcready_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_mcready_05fa27d0"
+}
+],
+"specialita_garry": [
+{
+"tipo": "alcol",
+"img": "specialita_garry_f5b2ffd8"
+},
+{
+"tipo": "alcol",
+"img": "specialita_garry_f5b2ffd8"
+},
+{
+"tipo": "proiettile",
+"img": "specialita_garry_aaaf9ff9"
+},
+{
+"tipo": "proiettile",
+"img": "specialita_garry_aaaf9ff9"
+},
+{
+"tipo": "proiettile",
+"img": "specialita_garry_aaaf9ff9"
+},
+{
+"tipo": "proiettile",
+"img": "specialita_garry_aaaf9ff9"
+},
+{
+"tipo": "proiettile",
+"img": "specialita_garry_aaaf9ff9"
+},
+{
+"tipo": "proiettile",
+"img": "specialita_garry_aaaf9ff9"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_garry_56552454"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_garry_b6efd7f8"
+},
+{
+"tipo": "dex",
+"img": "specialita_garry_19e40166"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_garry_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_garry_b671a9a2"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_garry_46ccef6e"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_garry_46ccef6e"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_garry_46ccef6e"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_garry_46ccef6e"
+},
+{
+"tipo": "snack",
+"img": "specialita_garry_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_garry_05fa27d0"
+},
+{
+"tipo": "prendere_comando",
+"img": "specialita_garry_dcc289b9"
+}
+],
+"vulnerabili": [
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_contaminata",
+"img": "vulnerabili_219236cf"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+},
+{
+"tipo": "vuln_pulita",
+"img": "vulnerabili_af2a7d07"
+}
+],
+"magazzino": [
+{
+"tipo": "dex",
+"img": "magazzino_19e40166"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "dex",
+"img": "magazzino_19e40166"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "accendino_vuoto",
+"img": "magazzino_f4a9bec3"
+},
+{
+"tipo": "dex",
+"img": "magazzino_19e40166"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "carta_piede_porco",
+"img": "magazzino_9a0b08e2"
+},
+{
+"tipo": "dex",
+"img": "magazzino_19e40166"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "spazzatura",
+"img": "magazzino_c82597be"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "spazzatura",
+"img": "magazzino_75ddac59"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "magazzino_b671a9a2"
+},
+{
+"tipo": "scatoletta",
+"img": "magazzino_4abd82c8"
+},
+{
+"tipo": "spazzatura",
+"img": "magazzino_33d37f5d"
+},
+{
+"tipo": "colpo_in_canna",
+"img": "magazzino_7cfdaeaa"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "carta_lanciarazzi",
+"img": "magazzino_b9915244"
+},
+{
+"tipo": "razzo",
+"img": "magazzino_4a2c3c24"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "magazzino_b671a9a2"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "colpo_in_canna",
+"img": "magazzino_7cfdaeaa"
+},
+{
+"tipo": "fucile",
+"img": "magazzino_506aa4fb"
+},
+{
+"tipo": "scatoletta",
+"img": "magazzino_6e5954cf"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "fucile",
+"img": "magazzino_506aa4fb"
+},
+{
+"tipo": "scatoletta",
+"img": "magazzino_03ab63bb"
+},
+{
+"tipo": "spazzatura",
+"img": "magazzino_d4e786d5"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "carta_torcia",
+"img": "magazzino_2614d16c"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "magazzino_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "magazzino_b671a9a2"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "fiammiferi",
+"img": "magazzino_bc7b0924"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "razzo",
+"img": "magazzino_4a2c3c24"
+},
+{
+"tipo": "fucile",
+"img": "magazzino_506aa4fb"
+},
+{
+"tipo": "scatoletta",
+"img": "magazzino_218a08eb"
+},
+{
+"tipo": "colpo_in_canna",
+"img": "magazzino_7cfdaeaa"
+},
+{
+"tipo": "spazzatura",
+"img": "magazzino_a787f550"
+},
+{
+"tipo": "carta_lanciarazzi",
+"img": "magazzino_b9915244"
+},
+{
+"tipo": "alcol",
+"img": "magazzino_4f0e3d69"
+},
+{
+"tipo": "scatoletta2",
+"img": "magazzino_bd66e7cd"
+},
+{
+"tipo": "dex",
+"img": "magazzino_19e40166"
+},
+{
+"tipo": "accendino_vuoto",
+"img": "magazzino_f4a9bec3"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "magazzino_b671a9a2"
+}
+],
+"fase3": [
+{
+"tipo": "manuale_elicottero",
+"img": "fase3_f81f592a"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase3_433d50d3"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase3_433d50d3"
+},
+{
+"tipo": "mappe",
+"img": "fase3_20384922"
+},
+{
+"tipo": "danno_porta",
+"img": "fase3_21637fef"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase3_433d50d3"
+},
+{
+"tipo": "mappe",
+"img": "fase3_20384922"
+},
+{
+"tipo": "taniche",
+"img": "fase3_72ba7f0a"
+},
+{
+"tipo": "scelta_specialita",
+"img": "fase3_bf233318"
+},
+{
+"tipo": "forziere_xp",
+"img": "fase3_91a6c5ba"
+},
+{
+"tipo": "forziere_specialita",
+"img": "fase3_fea31dcb"
+},
+{
+"tipo": "mappe",
+"img": "fase3_20384922"
+},
+{
+"tipo": "taniche",
+"img": "fase3_72ba7f0a"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase3_433d50d3"
+},
+{
+"tipo": "mappe",
+"img": "fase3_20384922"
+},
+{
+"tipo": "termite",
+"img": "fase3_a86a4004"
+},
+{
+"tipo": "lanterna_fase",
+"img": "fase3_7e8ad4b8"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase3_433d50d3"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase3_433d50d3"
+},
+{
+"tipo": "danno_porta",
+"img": "fase3_21637fef"
+},
+{
+"tipo": "dati_ricerca",
+"img": "fase3_65306391"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase3_433d50d3"
+},
+{
+"tipo": "danno_porta",
+"img": "fase3_21637fef"
+},
+{
+"tipo": "danno_porta",
+"img": "fase3_21637fef"
+},
+{
+"tipo": "danno_porta",
+"img": "fase3_21637fef"
+}
+],
+"eventi": [
+{
+"tipo": "ev_incendio_caldaia",
+"img": "eventi_a9de9fb8"
+},
+{
+"tipo": "ev_incendio",
+"img": "eventi_0a8f978a"
+},
+{
+"tipo": "ev_pazzo",
+"img": "eventi_84643370"
+},
+{
+"tipo": "ev_filo_spinato",
+"img": "eventi_311a08f5"
+},
+{
+"tipo": "ev_pazzo",
+"img": "eventi_84643370"
+},
+{
+"tipo": "ev_scienziato",
+"img": "eventi_96b821ef"
+},
+{
+"tipo": "ev_fame",
+"img": "eventi_c5b2d4f1"
+},
+{
+"tipo": "ev_danno_caldaia",
+"img": "eventi_f28b3ee4"
+},
+{
+"tipo": "ev_pazzo",
+"img": "eventi_84643370"
+},
+{
+"tipo": "ev_cane",
+"img": "eventi_58e1f870"
+},
+{
+"tipo": "ev_congelamento",
+"img": "eventi_610b429d"
+},
+{
+"tipo": "ev_cane_rabbioso",
+"img": "eventi_5902eaae"
+},
+{
+"tipo": "ev_danno_caldaia",
+"img": "eventi_f28b3ee4"
+},
+{
+"tipo": "ev_paranoia_dadi",
+"img": "eventi_bcdc10b5"
+},
+{
+"tipo": "ev_valanga",
+"img": "eventi_b4b204c9"
+},
+{
+"tipo": "ev_cane",
+"img": "eventi_58e1f870"
+},
+{
+"tipo": "ev_paranoia_carte",
+"img": "eventi_58fd8345"
+},
+{
+"tipo": "ev_cane_rabbioso",
+"img": "eventi_5902eaae"
+},
+{
+"tipo": "ev_fame",
+"img": "eventi_c5b2d4f1"
+},
+{
+"tipo": "ev_cosa",
+"img": "eventi_897238aa"
+},
+{
+"tipo": "ev_ombre",
+"img": "eventi_e361797a"
+},
+{
+"tipo": "ev_cane",
+"img": "eventi_58e1f870"
+},
+{
+"tipo": "ev_blackout",
+"img": "eventi_8c1b2088"
+},
+{
+"tipo": "ev_valanga",
+"img": "eventi_b4b204c9"
+},
+{
+"tipo": "ev_filo_spinato",
+"img": "eventi_311a08f5"
+}
+],
+"officina": [
+{
+"tipo": "spazzatura",
+"img": "officina_c445d34c"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "spazzatura",
+"img": "officina_96f4b65f"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "stoffa",
+"img": "officina_18935b70"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+},
+{
+"tipo": "spazzatura",
+"img": "officina_5fad3c27"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "metallo",
+"img": "officina_39fdc117"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "spazzatura",
+"img": "officina_afd5c974"
+},
+{
+"tipo": "viti",
+"img": "officina_6421982c"
+},
+{
+"tipo": "corda",
+"img": "officina_5ed093a8"
+},
+{
+"tipo": "legno",
+"img": "officina_186f02ee"
+}
+],
+"fase1": [
+{
+"tipo": "danno_porta",
+"img": "fase1_21637fef"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase1_2830dd40"
+},
+{
+"tipo": "danno_porta",
+"img": "fase1_21637fef"
+},
+{
+"tipo": "danno_porta",
+"img": "fase1_21637fef"
+},
+{
+"tipo": "forziere_torcia",
+"img": "fase1_c230eee3"
+},
+{
+"tipo": "mappe",
+"img": "fase1_20384922"
+},
+{
+"tipo": "coltello_fase",
+"img": "fase1_7a943655"
+},
+{
+"tipo": "danno_porta",
+"img": "fase1_21637fef"
+},
+{
+"tipo": "mappe",
+"img": "fase1_20384922"
+},
+{
+"tipo": "mappe",
+"img": "fase1_20384922"
+},
+{
+"tipo": "coltelli_lancio",
+"img": "fase1_624711b2"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase1_2830dd40"
+},
+{
+"tipo": "danno_porta",
+"img": "fase1_21637fef"
+},
+{
+"tipo": "danno_porta",
+"img": "fase1_21637fef"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase1_2830dd40"
+},
+{
+"tipo": "scelta_interne",
+"img": "fase1_bb979696"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase1_2830dd40"
+},
+{
+"tipo": "forziere_sciarpa",
+"img": "fase1_61936137"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase1_2830dd40"
+},
+{
+"tipo": "mappe",
+"img": "fase1_20384922"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase1_2830dd40"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase1_2830dd40"
+},
+{
+"tipo": "mappe",
+"img": "fase1_20384922"
+},
+{
+"tipo": "accendino_fase",
+"img": "fase1_1b23492a"
+},
+{
+"tipo": "danno_porta",
+"img": "fase1_21637fef"
+}
+],
+"fase2": [
+{
+"tipo": "cosa_attacca",
+"img": "fase2_89becb68"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase2_89becb68"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase2_89becb68"
+},
+{
+"tipo": "forziere_stamina",
+"img": "fase2_181f7bb1"
+},
+{
+"tipo": "danno_porta",
+"img": "fase2_21637fef"
+},
+{
+"tipo": "giubbotto",
+"img": "fase2_a57093eb"
+},
+{
+"tipo": "mappe",
+"img": "fase2_20384922"
+},
+{
+"tipo": "mappe",
+"img": "fase2_20384922"
+},
+{
+"tipo": "guida_fase",
+"img": "fase2_ee0e03ef"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase2_89becb68"
+},
+{
+"tipo": "danno_porta",
+"img": "fase2_21637fef"
+},
+{
+"tipo": "danno_porta",
+"img": "fase2_21637fef"
+},
+{
+"tipo": "danno_porta",
+"img": "fase2_21637fef"
+},
+{
+"tipo": "danno_porta",
+"img": "fase2_21637fef"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase2_89becb68"
+},
+{
+"tipo": "cappotto_fase",
+"img": "fase2_80ac9797"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase2_89becb68"
+},
+{
+"tipo": "mappe",
+"img": "fase2_20384922"
+},
+{
+"tipo": "cosa_attacca",
+"img": "fase2_89becb68"
+},
+{
+"tipo": "forziere_borsa",
+"img": "fase2_df4cfa0a"
+},
+{
+"tipo": "danno_porta",
+"img": "fase2_21637fef"
+},
+{
+"tipo": "mappe",
+"img": "fase2_20384922"
+},
+{
+"tipo": "forziere_lanciafiamme",
+"img": "fase2_bfda49c1"
+},
+{
+"tipo": "mappe",
+"img": "fase2_20384922"
+},
+{
+"tipo": "taniche",
+"img": "fase2_72ba7f0a"
+}
+],
+"specialita_norris": [
+{
+"tipo": "alcol",
+"img": "specialita_norris_8ad1fff5"
+},
+{
+"tipo": "alcol",
+"img": "specialita_norris_8ad1fff5"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_norris_df9663b4"
+},
+{
+"tipo": "carta_piede_porco",
+"img": "specialita_norris_a0f914d8"
+},
+{
+"tipo": "dex",
+"img": "specialita_norris_ad14cdd5"
+},
+{
+"tipo": "dex",
+"img": "specialita_norris_ad14cdd5"
+},
+{
+"tipo": "dex",
+"img": "specialita_norris_ad14cdd5"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_norris_100908b2"
+},
+{
+"tipo": "razzo",
+"img": "specialita_norris_9ce43d7a"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_norris_7c408a57"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_norris_7c408a57"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_norris_7c408a57"
+},
+{
+"tipo": "molotov",
+"img": "specialita_norris_d84d5c8d"
+},
+{
+"tipo": "colpo_in_canna",
+"img": "specialita_norris_6aef5483"
+},
+{
+"tipo": "kit_riparazione",
+"img": "specialita_norris_83d2b96d"
+},
+{
+"tipo": "kit_riparazione",
+"img": "specialita_norris_83d2b96d"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_norris_dede947d"
+},
+{
+"tipo": "snack",
+"img": "specialita_norris_d298a206"
+},
+{
+"tipo": "snack",
+"img": "specialita_norris_d298a206"
+},
+{
+"tipo": "banco_lavoro",
+"img": "specialita_norris_905460a1"
+}
+],
+"specialita_vanwall": [
+{
+"tipo": "alcol",
+"img": "specialita_vanwall_7af586db"
+},
+{
+"tipo": "alcol",
+"img": "specialita_vanwall_7af586db"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_vanwall_854a8557"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_vanwall_6a1bda40"
+},
+{
+"tipo": "dex",
+"img": "specialita_vanwall_19e40166"
+},
+{
+"tipo": "dex",
+"img": "specialita_vanwall_19e40166"
+},
+{
+"tipo": "accendino_vuoto",
+"img": "specialita_vanwall_f4a9bec3"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_vanwall_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_vanwall_b671a9a2"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_vanwall_8d775ff6"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_vanwall_8d775ff6"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_vanwall_8d775ff6"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_vanwall_8d775ff6"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_vanwall_8d775ff6"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_vanwall_8d775ff6"
+},
+{
+"tipo": "snack",
+"img": "specialita_vanwall_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_vanwall_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_vanwall_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_vanwall_05fa27d0"
+},
+{
+"tipo": "cassetta_attrezzi",
+"img": "specialita_vanwall_9a39bf61"
+}
+],
+"specialita_blair": [
+{
+"tipo": "alcol",
+"img": "specialita_blair_edbb1a16"
+},
+{
+"tipo": "alcol",
+"img": "specialita_blair_edbb1a16"
+},
+{
+"tipo": "alcol",
+"img": "specialita_blair_edbb1a16"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_blair_fe6436a1"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_blair_52394fe6"
+},
+{
+"tipo": "dex",
+"img": "specialita_blair_19e40166"
+},
+{
+"tipo": "dex",
+"img": "specialita_blair_19e40166"
+},
+{
+"tipo": "resistenza",
+"img": "specialita_blair_89696558"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_blair_49cbf2d4"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_blair_49cbf2d4"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_blair_49cbf2d4"
+},
+{
+"tipo": "test_ospite",
+"img": "specialita_blair_9a92273d"
+},
+{
+"tipo": "ingegno",
+"img": "specialita_blair_cba8a73d"
+},
+{
+"tipo": "legnetti",
+"img": "specialita_blair_d297d470"
+},
+{
+"tipo": "legnetti",
+"img": "specialita_blair_d297d470"
+},
+{
+"tipo": "legnetti",
+"img": "specialita_blair_d297d470"
+},
+{
+"tipo": "stazione_medica",
+"img": "specialita_blair_1a824057"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_blair_8d775ff6"
+},
+{
+"tipo": "snack",
+"img": "specialita_blair_05fa27d0"
+},
+{
+"tipo": "snack",
+"img": "specialita_blair_05fa27d0"
+}
+],
+"specialita_clark": [
+{
+"tipo": "alcol",
+"img": "specialita_clark_edbb1a16"
+},
+{
+"tipo": "alcol",
+"img": "specialita_clark_edbb1a16"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_clark_e97ba5e7"
+},
+{
+"tipo": "scatoletta",
+"img": "specialita_clark_6ad27f12"
+},
+{
+"tipo": "dex",
+"img": "specialita_clark_19e40166"
+},
+{
+"tipo": "dex",
+"img": "specialita_clark_19e40166"
+},
+{
+"tipo": "sella",
+"img": "specialita_clark_e0eabb06"
+},
+{
+"tipo": "biscotto",
+"img": "specialita_clark_879d991c"
+},
+{
+"tipo": "riporto",
+"img": "specialita_clark_398932ce"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_clark_b671a9a2"
+},
+{
+"tipo": "pronto_soccorso",
+"img": "specialita_clark_b671a9a2"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_clark_7a99d86e"
+},
+{
+"tipo": "fiammiferi",
+"img": "specialita_clark_7a99d86e"
+},
+{
+"tipo": "salvatore_att",
+"img": "specialita_clark_a6a23545"
+},
+{
+"tipo": "salvatore_ost",
+"img": "specialita_clark_895f909b"
+},
+{
+"tipo": "salvatore_any",
+"img": "specialita_clark_50c570b6"
+},
+{
+"tipo": "coltellino",
+"img": "specialita_clark_e34de48e"
+},
+{
+"tipo": "risorsa",
+"img": "specialita_clark_8d775ff6"
+},
+{
+"tipo": "sesto_senso",
+"img": "specialita_clark_eb0b2e35"
+},
+{
+"tipo": "manuale_addestramento",
+"img": "specialita_clark_63179761"
+}
+]
+}
+}
