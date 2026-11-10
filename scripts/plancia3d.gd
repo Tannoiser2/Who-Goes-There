@@ -268,7 +268,42 @@ func _aggiorna_camera() -> void:
 	cam.position = Vector3(0, 0, dist)
 	perno.position = Vector3(0.45, 0, 0.3)
 
+var tocchi := {}   # dita appoggiate sullo schermo (iPad): indice -> posizione
+
 func _unhandled_input(ev: InputEvent) -> void:
+	# tocco: un dito trascina (arriva come mouse), due dita pizzicano per lo zoom e ruotano il tavolo
+	if ev is InputEventScreenTouch:
+		if ev.pressed:
+			tocchi[ev.index] = ev.position
+		else:
+			tocchi.erase(ev.index)
+		if tocchi.size() >= 2:
+			trascina = false
+		return
+	if ev is InputEventScreenDrag:
+		if tocchi.size() >= 2 and tocchi.has(ev.index):
+			var altro := -1
+			for k in tocchi:
+				if k != ev.index:
+					altro = k
+					break
+			var fermo: Vector2 = tocchi[altro]
+			var prima: Vector2 = tocchi[ev.index]
+			var dopo: Vector2 = ev.position
+			var d0 := prima.distance_to(fermo)
+			var d1 := dopo.distance_to(fermo)
+			if d0 > 1.0 and d1 > 1.0:
+				dist = clamp(dist * d0 / d1, 2.6, 10.0)
+			var ang := (prima - fermo).angle_to(dopo - fermo)
+			yaw -= rad_to_deg(ang)
+			pitch = clamp(pitch - ev.relative.y * 0.12, -88.0, -18.0)
+			tocchi[ev.index] = dopo
+			_aggiorna_camera()
+		elif tocchi.has(ev.index):
+			tocchi[ev.index] = ev.position
+		return
+	if ev is InputEventMouseMotion and tocchi.size() >= 2:
+		return
 	if ev is InputEventMouseButton:
 		if ev.button_index == MOUSE_BUTTON_LEFT or ev.button_index == MOUSE_BUTTON_RIGHT:
 			trascina = ev.pressed

@@ -74,7 +74,10 @@ func sospetto(i: int, j: int) -> float:
 	for d in m.s["dichiarazioni"]:
 		if d["su"] == j and d["chi"] != i:
 			var fid := 1.0 - _sospetto_base(i, d["chi"])
-			sus += (0.4 if d["v"] == "infetto" else -0.15) * fid
+			match d["v"]:
+				"infetto": sus += 0.4 * fid
+				"pulito": sus -= 0.15 * fid
+				"sospetto": sus += 0.08 * fid
 		if d["chi"] == j and d["v"] == "infetto":
 			# chi accusa qualcuno che io so pulito è sospetto
 			var sv2 = gi["sa"].get(str(d["su"]), null)
@@ -273,6 +276,16 @@ func _manca_solo(i: int) -> String:
 			return mancano[0]
 	return ""
 
+## Si può dare via questa carta senza danneggiarsi?
+func _posso_cedere(i: int, t: String) -> bool:
+	if t in ["scatoletta", "scatoletta2"]:
+		return m.conta_mano(i, "scatoletta") + m.conta_mano(i, "scatoletta2") >= 2
+	if t == "pronto_soccorso":
+		return m.g(i)["ferite"] + m.g(i)["critiche"] == 0 and m.conta_mano(i, t) >= 1
+	if t in Dati.MATERIALI:
+		return not _serve_materiale(i, t) or m.conta_mano(i, t) >= 2
+	return true
+
 func _peggiore(i: int, opz: Array) -> String:
 	var best := ""
 	var bv := 999.0
@@ -411,12 +424,15 @@ func _spazio_fuori(i: int) -> String:
 	return best
 
 func _spazio_dentro(i: int) -> String:
-	if (not _ha_cibo(i) and _turni_al_pasto() <= 2) or (m.conta_mano(i, "pronto_soccorso") == 0 and m.g(i)["ferite"] > 1):
+	if (not _ha_cibo(i) and _turni_al_pasto() <= 1) or (m.conta_mano(i, "pronto_soccorso") == 0 and m.g(i)["ferite"] > 1):
+		return "magazzino"
+	var ms := _manca_solo(i)
+	if ms in ["alcol", "fiammiferi"]:
 		return "magazzino"
 	# servono armi: materiali dall'Officina
-	if m.spazi_usati(i) < m.spazi_oggetti(i):
-		return "officina" if rng.randf() < 0.75 else "magazzino"
-	return "officina" if rng.randf() < 0.4 else "magazzino"
+	if m.spazi_usati(i) < m.spazi_oggetti(i) or ms != "":
+		return "officina" if rng.randf() < 0.85 else "magazzino"
+	return "officina" if rng.randf() < 0.5 else "magazzino"
 
 func _k_turno(i: int, r: Dictionary):
 	var gg := m.g(i)
@@ -428,6 +444,7 @@ func _k_turno(i: int, r: Dictionary):
 		m.s["_ia_meta"] = _meta(i)
 		m.s["_ia_spazio"] = _spazio_fuori(i) if m.s["_ia_meta"] == "fuori" else _spazio_dentro(i)
 		m.s["_ia_cont"] = 0
+		_inizio_turno(i)
 	m.s["_ia_cont"] += 1
 	if m.s["_ia_cont"] > 40:
 		return "fine"
@@ -444,7 +461,58 @@ func _k_turno(i: int, r: Dictionary):
 			best = o["id"]
 	if best.begins_with("chiedi"):
 		m.s["_ia_chiesti"] = int(m.s.get("_ia_chiesti", 0)) + 1
+		var pp := best.split(":")
+		if not m.s.has("_ia_rif"):
+			m.s["_ia_rif"] = {}
+		m.s["_ia_rif"]["%d_%s_%s" % [i, pp[1], pp[2]]] = m.s["turno"]
+	# riserva: niente azioni "di contorno" con l'ultima Azione se serve ricevere cibo
+	if _riserva(i) and not (best.begins_with("evento") or best.begins_with("gioca") or best.begins_with("chiedi") or best == "fine"):
+		var o_best: Dictionary = {}
+		for o in opz:
+			if o["id"] == best:
+				o_best = o
+		if not o_best.is_empty() and str(o_best.get("gr", "")) in ["cerca", "azioni", "muovi"]:
+			return "fine"
 	return best
+
+## All'inizio del turno l'IA dice cosa le serve e, a volte, di chi non si fida.
+func _inizio_turno(i: int) -> void:
+	var gg := m.g(i)
+	var serve := []
+	if not _ha_cibo(i) and _turni_al_pasto() <= 2:
+		serve.append("scatoletta")
+	var ms := _manca_solo(i)
+	if ms != "" and not (ms in serve):
+		serve.append(ms)
+	if gg["ferite"] + gg["critiche"] >= 2 and m.conta_mano(i, "pronto_soccorso") == 0:
+		serve.append("pronto_soccorso")
+	var prima: Array = m.s["bisogni"].get(str(i), [])
+	m.s["bisogni"][str(i)] = serve
+	var nuovi := serve.filter(func(x): return not (x in prima))
+	if not nuovi.is_empty():
+		m.dice(i, "Mi serve: %s. Qualcuno ce l'ha?" % ", ".join(nuovi.map(func(x): return Dati.nome_carta(x).to_lower())))
+	# sospetti ad alta voce (non più di uno ogni tanto)
+	if rng.randf() < 0.3 and m.s["turno"] >= 2:
+		var peggio := -1
+		var ps := 0.42
+		for j in m.vivi():
+			if j == i:
+				continue
+			var sc := sospetto(i, j)
+			if infetto(i):
+				# la Cosa sposta i sospetti su chi ha molte Vulnerabili ma è umano
+				sc = 0.0 if infetto(j) else 0.2 + 0.12 * float(m.s["n_vuln_pubbliche"].get(str(j), 0)) + rng.randf() * 0.2
+			if sc > ps:
+				ps = sc
+				peggio = j
+		if peggio >= 0:
+			var frasi := ["Non mi fido di %s.", "Tenete d'occhio %s.", "%s ha qualcosa di strano...", "Io con %s non dormo."]
+			m.dice(i, frasi[rng.randi_range(0, frasi.size() - 1)] % m.nome(peggio))
+			m.s["dichiarazioni"].append({"chi": i, "su": peggio, "v": "sospetto", "turno": m.s["turno"]})
+
+func _riserva(i: int) -> bool:
+	# vicino al Pasto, senza cibo, si tiene 1 Azione per ricevere una Scatoletta
+	return not _ha_cibo(i) and _turni_al_pasto() <= 1 and m.g(i)["azioni"] <= 1
 
 func _valuta(i: int, o: Dictionary, meta: String, spazio: String) -> float:
 	var gg := m.g(i)
@@ -561,9 +629,9 @@ func _valuta(i: int, o: Dictionary, meta: String, spazio: String) -> float:
 					return 36.0
 				return 12.0 if _turni_alla_fine() > 5 else 30.0
 			if mz.begins_with("specialita"):
-				var sv := 33.0 + (4.0 if m.s["mazzi"][mz].size() > 8 else 0.0)
-				if not _ha_cibo(i) and _turni_al_pasto() <= 4:
-					sv += 8.0
+				var sv := 30.0
+				if not _ha_cibo(i) and _turni_al_pasto() <= 2:
+					sv += 14.0
 				return sv
 			if mz == gg["pos"]:
 				var cv := 40.0 if gg["pos"] == spazio else 34.0
@@ -578,13 +646,24 @@ func _valuta(i: int, o: Dictionary, meta: String, spazio: String) -> float:
 		"dai":
 			var j: int = int(parti[1])
 			var t4: String = gg["mano"][int(parti[2])]["t"]
+			var bis: Array = m.s["bisogni"].get(str(j), [])
+			if t4 in bis and _posso_cedere(i, t4):
+				if infetto(i):
+					return 50.0
+				if sospetto(i, j) < 0.5:
+					return 50.0
 			if infetto(i) and gg["vuln"].size() > 0 and not infetto(j) and _vuole_contagiare(i, j) and t4 == "spazzatura":
 				return 26.0
+			return 0.0
+		"serve", "nonserve":
 			return 0.0
 		"chiedi":
 			var j2: int = int(parti[1])
 			var tipo: String = parti[2]
-			if int(m.s.get("_ia_chiesti", 0)) >= 2:
+			if int(m.s.get("_ia_chiesti", 0)) >= 1:
+				return 0.0
+			var rif: Dictionary = m.s.get("_ia_rif", {})
+			if int(m.s["turno"]) - int(rif.get("%d_%d_%s" % [i, j2, tipo], -9)) < 3:
 				return 0.0
 			if tipo == "scatoletta" and not _ha_cibo(i) and _turni_al_pasto() <= 3 and a >= 1:
 				return 47.0 if (infetto(i) or sospetto(i, j2) < 0.45) else 0.0

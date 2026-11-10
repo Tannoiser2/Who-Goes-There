@@ -23,7 +23,16 @@ Si gioca qui: https://tannoiser2.github.io/Who-Goes-There/
 - **Carte ricomposte in italiano**: illustrazione originale, nome e testo tradotti.
 - **Online** con gli amici (stanze con codice di 4 lettere su Firebase, i posti vuoti li guida l'IA) e **salvataggio**
   della partita contro l'IA su Firebase (e sul dispositivo).
+- **Scambi** come nel regolamento: uno scambio fra due giocatori resta aperto per tutto il turno, chi riceve paga
+  1 Azione una volta sola e il segnalatore passa una volta sola; si può annunciare agli altri cosa ti serve.
 - **Modalità clemente** facoltativa: eventi e attacchi della Cosa chiedono un Successo in meno.
+
+## Semplificazioni rispetto al regolamento
+
+- La carta «Prendere il comando» di Garry non si può giocare (servirebbe intervenire durante il tiro di un altro).
+- La «Difesa del campo» non permette di guardare il prossimo evento spendendo 1 XP.
+- Nel turno dell'elicottero non c'è la discussione libera: il capo decide, chi è a bordo può scendere.
+- Il capo è sempre il personaggio di grado più alto (non si può cedere il comando).
 
 ## Struttura
 

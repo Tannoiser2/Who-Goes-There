@@ -46,6 +46,9 @@ func _run():
 		var r: Dictionary = main.m.richiesta()
 		if not r.is_empty() and main.io(r["g"]) and main.richiesta_mostrata == int(main.m.s["passo"]):
 			main.richiesta_mostrata = -5
-			await main._decidi(main.ia.decidi(r))
+			# l'IA decide su una copia dello stato: il giocatore umano non deve toccare lo stato condiviso
+			var copia := Motore.new()
+			copia.carica(main.m.s.duplicate(true))
+			await main._decidi(IA.new(copia).decidi(copia.richiesta()))
 	print("WGT fine ", role, " passo ", main.m.s["passo"], " esito ", main.m.s["esito"].get("vince", "?"), " impronta ", str(main.m.s["log"]).hash())
 	quit()

@@ -23,7 +23,8 @@ func nuova(cfg: Dictionary) -> void:
 		"giocatori": [], "ordine": [], "capo": 0, "corrente": -1, "stadio": "inizio",
 		"mazzi": {}, "scarti_fase": [], "scarti_campo": [], "falo": [], "evento": {}, "blocco": false,
 		"prossimo_evento": {}, "caldaia": 0, "porta": 0, "banco": {}, "riferimenti": [],
-		"coda": [], "ctx": {}, "log": [], "dichiarazioni": [], "esito": {}, "eventi_pubblici": [], "n_vuln_pubbliche": {}}
+		"coda": [], "ctx": {}, "log": [], "dichiarazioni": [], "esito": {}, "eventi_pubblici": [], "n_vuln_pubbliche": {},
+		"trattative": {}, "bisogni": {}}
 	for k in Dati.TESSERE:
 		s["banco"][k] = int(Dati.TESSERE[k]["n"])
 	var c := Dati.carte()
@@ -98,6 +99,10 @@ func luogo(i: int) -> String:
 
 func stesso_luogo(a: int, b: int) -> bool:
 	return luogo(a) == luogo(b)
+
+## Una frase detta ad alta voce da un personaggio (finisce nel diario).
+func dice(i: int, frase: String) -> void:
+	_log("%s: \"%s\"" % [nome(i), frase])
 
 func _log(t: String) -> void:
 	s["log"].append(t)
@@ -471,6 +476,7 @@ func _prossimo_giocatore() -> void:
 	var i: int = ord[s["corrente"]]
 	g(i)["azioni_turno"] = 0
 	g(i)["rifiuti"] = {}
+	s["trattative"] = {}
 	_chiedi_turno(i)
 
 func corrente() -> int:
@@ -614,14 +620,22 @@ func azioni_possibili(i: int) -> Array:
 	for j in vivi():
 		if j == i or not _possono_scambiare(i, j):
 			continue
-		if _puo_ricevere(j):
+		var aperta := _trattativa_aperta(i, j)
+		if aperta or _puo_ricevere(j):
 			for k in gg["mano"].size():
 				var c: Dictionary = gg["mano"][k]
-				out.append({"id": "dai:%d:%d" % [j, k], "testo": "Dai a %s: %s" % [nome(j), Dati.nome_carta(c["t"])], "gr": "scambi", "j": j, "k": k})
-		if a >= 1 and not g(j)["mano"].is_empty() and gg["mano"].size() < max_mano(i) + 3:
+				out.append({"id": "dai:%d:%d" % [j, k], "testo": "Dai a %s: %s%s" % [nome(j), Dati.nome_carta(c["t"]), " (stesso scambio)" if aperta else ""], "gr": "scambi", "j": j, "k": k})
+		if (a >= 1 or _trattativa_aperta(j, i)) and not g(j)["mano"].is_empty() and gg["mano"].size() < max_mano(i) + 3:
 			for tipo in ["scatoletta", "pronto_soccorso", "fiammiferi", "alcol", "legno", "stoffa", "corda", "viti", "metallo"]:
 				if not g(i)["rifiuti"].has("%d_%s" % [j, tipo]):
 					out.append({"id": "chiedi:%d:%s" % [j, tipo], "testo": "Chiedi a %s: %s (1 Azione se te la dà)" % [nome(j), Dati.nome_carta(tipo)], "gr": "chiedi", "j": j, "tipo": tipo})
+	# dire agli altri cosa ti serve (non costa Azioni)
+	var miei: Array = s["bisogni"].get(str(i), [])
+	for tipo in ["scatoletta", "pronto_soccorso", "fiammiferi", "alcol", "legno", "stoffa", "corda", "viti", "metallo"]:
+		if tipo in miei:
+			out.append({"id": "nonserve:" + tipo, "testo": "Non mi serve più: %s" % Dati.nome_carta(tipo), "gr": "bisogni"})
+		elif miei.size() < 3:
+			out.append({"id": "serve:" + tipo, "testo": "Annuncia che ti serve: %s" % Dati.nome_carta(tipo), "gr": "bisogni"})
 	# assalto e attacco d'infezione
 	if a >= 5:
 		for j in vivi():
@@ -657,6 +671,11 @@ func _possono_scambiare(i: int, j: int) -> bool:
 			if g(k)["jack"] != "":
 				return true
 	return false
+
+## Uno scambio fra due giocatori resta aperto per tutto il turno: chi riceve paga 1 Azione una volta sola,
+## e il segnalatore di chi dà si passa una volta sola, qualunque sia il numero di carte.
+func _trattativa_aperta(da: int, a: int) -> bool:
+	return s["trattative"].has("%d_%d" % [da, a])
 
 ## Chi riceve una carta spende 1 Azione: se ha già giocato il turno deve averne tenuta una da parte.
 func _puo_ricevere(j: int) -> bool:
@@ -1116,6 +1135,15 @@ func _dec_turno(i: int, o: Dictionary, _r: Dictionary) -> void:
 		"dai":
 			continua = false
 			_scambio(i, int(parti[1]), int(parti[2]), i)
+		"serve":
+			var lb: Array = s["bisogni"].get(str(i), [])
+			lb.append(parti[1])
+			s["bisogni"][str(i)] = lb
+			_log("%s: \"Mi serve: %s.\"" % [nome(i), Dati.nome_carta(parti[1])])
+		"nonserve":
+			var lb2: Array = s["bisogni"].get(str(i), [])
+			lb2.erase(parti[1])
+			s["bisogni"][str(i)] = lb2
 		"chiedi":
 			continua = false
 			var j := int(parti[1])
@@ -1193,8 +1221,17 @@ func _dec_chiesta(j: int, o: Dictionary, r: Dictionary) -> void:
 func _scambio(da: int, a: int, k: int, chi_turno: int) -> void:
 	var c: Dictionary = g(da)["mano"][k]
 	g(da)["mano"].remove_at(k)
-	g(a)["azioni"] = max(0, g(a)["azioni"] - 1)
 	g(a)["mano"].append(c)
+	# chi aveva annunciato di averne bisogno non lo cerca più
+	var lb: Array = s["bisogni"].get(str(a), [])
+	if c["t"] in lb:
+		lb.erase(c["t"])
+	if _trattativa_aperta(da, a):
+		_log("%s dà un'altra carta a %s." % [nome(da), nome(a)])
+		_torna_al_turno(chi_turno)
+		return
+	s["trattative"]["%d_%d" % [da, a]] = true
+	g(a)["azioni"] = max(0, g(a)["azioni"] - 1)
 	_log("%s dà una carta a %s." % [nome(da), nome(a)])
 	s["eventi_pubblici"].append({"t": "scambio", "a": da, "b": a, "turno": s["turno"], "vuln": g(da)["vuln"].size()})
 	if g(da)["vuln"].size() > 0:

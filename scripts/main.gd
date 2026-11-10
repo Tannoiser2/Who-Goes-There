@@ -56,6 +56,8 @@ var segreto_lbl: Label
 var gruppi_aperti := {}
 var notifica: PanelContainer
 var evento_box: CenterContainer
+var cronaca: Label
+var cronaca_tw: Tween
 var evento_mostrato := ""
 
 func _ready() -> void:
@@ -672,6 +674,18 @@ func _apri_partita() -> void:
 	vista.add_child(plancia)
 	plancia.spazio_cliccato.connect(_spazio_cliccato)
 	_costruisci_hud()
+	# cronaca: l'ultima cosa successa, in grande sopra il tavolo
+	cronaca = etichetta("", F_TITOLO, 26, C_GHIACCIO)
+	cronaca.set_anchors_preset(Control.PRESET_TOP_WIDE)
+	cronaca.offset_left = 270
+	cronaca.offset_right = -360
+	cronaca.offset_top = 54
+	cronaca.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	cronaca.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	cronaca.add_theme_constant_override("outline_size", 8)
+	cronaca.add_theme_color_override("font_outline_color", Color(0.01, 0.02, 0.05))
+	cronaca.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	schermo.add_child(cronaca)
 	_aggiorna_tutto()
 
 func _costruisci_hud() -> void:
@@ -872,7 +886,7 @@ func _process(delta: float) -> void:
 	var seat: int = m.g(r["g"])["seat"]
 	if seat < 0:
 		attesa += delta * velocita
-		var pausa := 0.5 if r["k"] == "turno" else 0.35
+		var pausa := 0.8 if r["k"] == "turno" else 0.4
 		if attesa >= pausa:
 			attesa = 0.0
 			var id := ia.decidi(r)
@@ -939,8 +953,8 @@ func _spazio_cliccato(sp: String) -> void:
 const GRUPPI := [["evento", "Evento del campo"], ["costruisci", "Costruire"], ["muovi", "Spostarti"], ["cerca", "Cercare"],
 	["azioni", "Altre azioni"], ["carte", "Giocare carte"], ["armadietto", "Dado armadietto"], ["sblocca", "Sbloccare (XP)"],
 	["falo", "Falò"], ["scambi", "Dare carte"], ["chiedi", "Chiedere carte"], ["assalto", "Violenza"],
-	["tessere", "Tessere oggetto"], ["scarta", "Scartare carte"], ["fine", "Fine"]]
-const GRUPPI_CHIUSI := ["chiedi", "scambi", "tessere", "scarta", "falo", "assalto"]
+	["tessere", "Tessere oggetto"], ["scarta", "Scartare carte"], ["bisogni", "Dire cosa ti serve"], ["fine", "Fine"]]
+const GRUPPI_CHIUSI := ["chiedi", "scambi", "tessere", "scarta", "falo", "assalto", "bisogni"]
 
 func _mostra_richiesta(r: Dictionary) -> void:
 	_pulisci_azioni()
@@ -1120,6 +1134,12 @@ func _aggiorna_giocatori() -> void:
 			ti2.tooltip_text = Dati.TESSERE[t]["nome"] + ": " + Dati.TESSERE[t]["testo"]
 			ti2.mouse_filter = Control.MOUSE_FILTER_STOP
 			tb.add_child(ti2)
+		var bis: Array = m.s.get("bisogni", {}).get(str(i), [])
+		if not bis.is_empty():
+			var lb := etichetta("Cerca: " + ", ".join(bis.map(func(x): return Dati.nome_carta(x).to_lower())), F_TESTO, 13, C_FUOCO)
+			lb.custom_minimum_size = Vector2(180, 0)
+			lb.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			v.add_child(lb)
 		var bonus := m.bonus_giocatore(i)
 		if bonus > 0:
 			tb.add_child(etichetta(" Bonus %d" % bonus, F_GRASSETTO, 14, C_FUOCO))
@@ -1177,8 +1197,23 @@ func _aggiorna_diario() -> void:
 			diario.push_color(Color(0.45, 0.05, 0.03))
 			diario.add_text("\n" + riga.replace("=", "").strip_edges() + "\n")
 			diario.pop()
+		elif riga.contains(": \""):
+			diario.push_color(Color(0.1, 0.22, 0.45))
+			diario.add_text(riga + "\n")
+			diario.pop()
 		else:
 			diario.add_text(riga + "\n")
+	if log.size() > ultimo_log and cronaca:
+		var ultima: String = log[log.size() - 1]
+		if not ultima.begins_with("==="):
+			cronaca.text = ultima
+			cronaca.add_theme_color_override("font_color", Color(0.75, 0.85, 1.0) if ultima.contains(": \"") else C_GHIACCIO)
+			cronaca.modulate.a = 1.0
+			if cronaca_tw:
+				cronaca_tw.kill()
+			cronaca_tw = create_tween()
+			cronaca_tw.tween_interval(2.5)
+			cronaca_tw.tween_property(cronaca, "modulate:a", 0.0, 1.0)
 	ultimo_log = log.size()
 
 ## Avvisa il giocatore quando ha visto qualcosa in segreto (segnalatori, esami).
